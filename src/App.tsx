@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext } from "react";
+import ABasicProps from "./reactcheatsheet/ABasicProps";
+import { BFunctionalComponent } from "./reactcheatsheet/BFunctionalComp";
+import { CHooks } from "./reactcheatsheet/CHooks";
 
-function App() {
+//context creation - require for useContext
+type ThemeContextType = "light" | "dark";
+const ThemeContext = createContext<ThemeContextType>("light");
+
+type Props = {};
+
+export default function App({}: Props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <ABasicProps 
+      message="Welcome"
+      // names={["Shubham","Bade"]}
+      /> */}
+      {/* <BFunctionalComponent message="hello"/> */}
+      <CHooks />
     </div>
   );
 }
-
-export default App;
